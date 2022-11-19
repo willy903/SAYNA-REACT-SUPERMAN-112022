@@ -6,6 +6,9 @@ import Layout from '../page/Layout';
 import Game from '../page/Game';
 import MonCompte from '../page/MonCompte';
 import Eshop from '../page/Eshop';
+import { PageNotFound } from '../page/PageNotFound';
+import { Product } from './product';
+import  Cart  from '../components/cart';
 function App() {
     return ( 
          <BrowserRouter>
@@ -16,6 +19,9 @@ function App() {
                         <Route path='game' element={<Game/>} />
                         <Route path='eshop' element={<Eshop/>} />
                         <Route path='MonCompte' element={<MonCompte/>} />
+                        <Route path='Eshop/:id' element={<Product/>} />
+                        <Route path='cart' element={<Cart/>} />
+                        <Route path='*' element={<PageNotFound/>} />
                     </Route>
                 </Routes>
             </BrowserRouter>
