@@ -9,6 +9,8 @@ import Eshop from '../page/Eshop';
 import { PageNotFound } from '../page/PageNotFound';
 import { Product } from './product';
 import  Cart  from '../components/cart';
+import Login from './login';
+import Register from './register';
 function App() {
     return ( 
          <BrowserRouter>
@@ -21,6 +23,8 @@ function App() {
                         <Route path='MonCompte' element={<MonCompte/>} />
                         <Route path='Eshop/:id' element={<Product/>} />
                         <Route path='cart' element={<Cart/>} />
+                        <Route path='login' element={<Login/>} />
+                        <Route path='register' element={<Register/>} />
                         <Route path='*' element={<PageNotFound/>} />
                     </Route>
                 </Routes>

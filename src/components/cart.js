@@ -5,8 +5,14 @@ import {AiOutlineMinusCircle} from "react-icons/ai";
 import {AiOutlinePlusCircle} from 'react-icons/ai';
 import {RiDeleteBin5Fill} from 'react-icons/ri';
 import {NavLink} from 'react-router-dom';
+import { supprCart } from './redux/action';
 function Cart() {
-    const state = useSelector((state) => state.handleCart)
+    const state = useSelector((state) => state.handleCart);
+    const suppProduct = (selectPro) =>{
+        dispatch(supprCart(selectPro.id)); 
+        console.log(selectPro)
+    }
+    
    const [test, setTest] = useState(false);
    useEffect(() => {
     const testPro = async () => {
@@ -15,13 +21,13 @@ function Cart() {
         }
     }
     testPro();
-}, [])   
+})   
  
     const ShowProduct = () => {
        return(
             state.map((selectPro) => {
+                
                 return (
-                       <>
                        <div key={selectPro.id}>
                             <div  className="d-flex justify-content-between align-items-center containairPanier my-4">
                                 <div className="product d-flex align-items-center" style={{ "width": "60%" }}>
@@ -41,11 +47,10 @@ function Cart() {
                                     <AiOutlinePlusCircle size={30}/>
                                 </div>
                                 <div className="delete px-4">
-                                    <RiDeleteBin5Fill size={40} color="red"/>
+                                   <button  onClick={()=> suppProduct(selectPro.id)}> <RiDeleteBin5Fill size={40} color="red"/></button>
                                 </div>
                             </div>
                         </div>
-                       </> 
                 )
             })
             )
@@ -101,11 +106,15 @@ function Cart() {
                     </div>
                 </div>
                 <section className="container container-largeur d-flex justify-content-end mx-auto my-5">
-                    <button className="btn-reg mx-2 px-3">Continuer mes achats</button>
-                    <button className="btn-reg mx-2 px-3">Passer commande</button>
+                    <NavLink to={"../../eshop"} className="btn btn-primary btn-reg mx-2 px-3">Continuer mes achats</NavLink>
+                    <button className="btn btn-secondary btn-reg mx-2 px-3">Passer commande</button>
                 </section>
             </div>
         </>
     )
 }
 export default Cart
+
+function dispatch(arg0: any) {
+    throw new Error('Function not implemented.');
+}

@@ -1,0 +1,96 @@
+.container_count {
+    background: url(../assets/images/img19.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.border_count {
+    padding: 12%;
+    width: 85%;
+}
+
+.user_card {
+    background: rgb(32, 38, 52);
+    background: linear-gradient(118deg, rgba(32, 38, 52, 1) 0%, rgba(40, 57, 35, 1) 100%);
+    border-radius: 20px;
+}
+
+.bg-ajust-2 {
+    border-radius: 10px;
+    background: rgb(25, 25, 25);
+    background: linear-gradient(306deg, rgba(25, 25, 25, 1) 0%, rgba(42, 42, 42, 0.4766281512605042) 100%);
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: #60a3bc;
+    padding: 10px;
+    text-align: center;
+}
+
+.border_bas {
+    border-bottom: 2px solid #fff;
+}
+
+.brand_logo {
+    height: 30px;
+    width: 30px;
+    position: relative;
+}
+
+.form_container {
+    margin-top: 100px;
+}
+
+.form-control {
+    background-color: transparent!important;
+    outline: none;
+    border: none!important;
+}
+
+.border-ajust {
+    border: #60a3bc 1px solid;
+    border-radius: 3px;
+}
+
+.login_btn {
+    width: 100%;
+    background: rgb(57, 82, 106);
+    background: linear-gradient(170deg, rgba(57, 82, 106, 1) 0%, rgba(91, 112, 221, 1) 57%);
+    color: white !important;
+    font-size: 25px!important;
+    font-weight: 400!important;
+}
+
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.login_container {
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    color: white !important;
+    border: 0 !important;
+    background-color: transparent!important;
+}
+
+.input-group {
+    width: 500px!important;
+}
+
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #c0392b !important;
+}

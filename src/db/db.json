@@ -134,5 +134,20 @@
             "Poids": null,
             "Capacité": null
         }
+    ],
+    "user": [{
+            "nom": "heriniaina",
+            "prenom": "willy",
+            "email": "willyjacquino@gmail.com",
+            "password": "test1",
+            "id": 1
+        },
+        {
+            "nom": "heriniaina",
+            "prenom": "willy",
+            "email": "test1@gmail.com",
+            "password": "test2",
+            "id": 2
+        }
     ]
 }

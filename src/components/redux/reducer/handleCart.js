@@ -1,12 +1,14 @@
 import Products from "../../products";
 
-const cart = [];
+ const cart  = [];
+
 const handleCart = (state = cart, action) => {
     switch (action.type) {
         case "ADDITEM":
             //verifier si le product exist
             const exist = state.find((x) => x.id === Products.id);
             if (exist) {
+                console.log(exist);
                 return state.map((x) =>
                     x.id === Products.id ? {...x, qty: x.qty + 1 } : x
 
@@ -17,11 +19,11 @@ const handleCart = (state = cart, action) => {
                     ...state,
                     {
                         ...product,
-                        sty: 1,
+                        qty: 1,
                     }
                 ]
             }
-            break;
+        break
         case "DELITEM":
             const exist1 = state.find((x) => x.id === Products.id);
             if (exist1.qty === 1) {
@@ -31,10 +33,10 @@ const handleCart = (state = cart, action) => {
                     x.id === Products.id ? {...x, qty: x.qty - 1 } : x
                 )
             }
-            break;
+        break
         default:
         return state;
-            break;
+        break
     }
 }
 export default handleCart;

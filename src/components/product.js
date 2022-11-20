@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
-import {addCart} from '../components/redux/action';
+import {addCart, supprCart} from '../components/redux/action';
 import { NavLink } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 import { BsHeart } from 'react-icons/bs';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Skeleton from 'react-loading-skeleton';
 import "react-loading-skeleton/dist/skeleton.css";
-
 import '../style/product.css';
 export const Product = () => {
     const { id } = useParams();
@@ -18,6 +17,7 @@ export const Product = () => {
     const addProduct = (product) =>{
         dispatch(addCart(product)); 
     }
+    
 
     useEffect(() => {
         const getProduct = async () => {
@@ -93,7 +93,7 @@ export const Product = () => {
                             <div className="white-color"></div>
                             <div className="row my-4">
                                 <div className="d-flex justify-content-between">
-                                    <h3 className='fw-bold'>€{product.Prix}</h3>
+                                    <h3 className='fw-bold'>{product.Prix}€</h3>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="px-4">EnStock</div>
                                         <select className="form-select rounded" aria-label="Default select example">

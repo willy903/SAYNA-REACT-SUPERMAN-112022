@@ -4,6 +4,8 @@ import {addCart} from '../components/redux/action';
 import Skeleton from 'react-loading-skeleton';
 import "react-loading-skeleton/dist/skeleton.css";
 import { NavLink } from 'react-router-dom';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+
 const Products = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
@@ -52,14 +54,17 @@ const Products = () => {
     }
 
     const ShowProducts = () => {
+        const state = useSelector((state) => state.handleCart)
         return (
-            
             <>
-                <div className="butons text-center py-5">
+                <div className="butons text-center py-5 px-5">
                     <button className="btn btn-outline-dark text-white me-2" onClick={() => setFilter(data)}>All</button>
                     <button className="btn btn-outline-dark text-white me-2" onClick={() => FilterProduct("Vêtements")}>Vêtements</button>
                     <button className="btn btn-outline-dark text-white me-2" onClick={() => FilterProduct("Équipement")}>Équipement</button>
                     <button className="btn btn-outline-dark text-white me-2">Choose</button>
+                    <div className="float-end text-white">
+                        <NavLink className="text-reset" to={"../../cart"}><AiOutlineShoppingCart size={30} color="#fff" /><span className='text-white text-just'>({state.length})</span></NavLink>
+                    </div>
                 </div>
                 {filter.map((product) => {
                     return (
@@ -91,7 +96,7 @@ const Products = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h1 className='display-6 fw-bolder text-center'>Latest products</h1>
+                        <h1 className='display-6 fw-bolder text-center'>Dernier produit</h1>
                     </div>
                     <div className="row justify-content-center">
                         {loading ? <Loading /> : <ShowProducts />}
