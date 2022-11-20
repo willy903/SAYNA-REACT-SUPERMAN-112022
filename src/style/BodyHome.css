@@ -3,6 +3,7 @@
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
+    height: 100vh;
 }
 
 h1 {
@@ -109,22 +110,21 @@ textarea {
 }
 
 .container_paragraphe {
-    margin-top: 200px;
     margin-right: 0;
     margin-left: 0;
     width: 570px;
     font-family: spaceGrotesk;
     color: #fff;
-    text-align: center;
-    font-size: 22px;
+    font-size: 70px;
+    font-weight: 900;
 }
 
 .container_a .title_batman {
-    margin-top: 40px;
     margin-right: 0;
     margin-left: 0;
     font-family: spaceGrotesk;
-    font-size: 36px;
+    font-size: 40px;
+    font-weight: 800;
     color: #fff;
 }
 
